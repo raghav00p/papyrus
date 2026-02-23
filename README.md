@@ -1,62 +1,53 @@
 # Odyssey
 
-Tiny-solutions starter: quick, composable web tooling using Alpine.js, PocketBase, and SvelteKit.
+A starter project to get you up and running with **Svelte** and **PocketBase** for rapid full-stack development.
 
-Why this repo
-- Focus: small, focused tools that compose into productive apps. Less boilerplate, faster iteration.
-- Use-cases: prototypes, admin UIs, microsites, and hobby projects where simplicity matters.
+## About This Project
 
-Core technologies
-- Alpine.js — lightweight reactive UI for sprinkles of interactivity. (https://alpinejs.dev)
-- PocketBase — single binary realtime backend with auth and file storage. (https://pocketbase.io)
-- SvelteKit — fast, minimal framework for building full apps when you need routing and SSR. (https://kit.svelte.dev)
+This project provides a foundation for building modern web applications with Svelte on the frontend and PocketBase as your backend. It helps you quickly scaffold a complete application with authentication, real-time data sync, and a simple deployment model—perfect for prototypes, MVPs, internal tools, and hobby projects.
 
-Quickstarts
+## What is Svelte?
 
-SvelteKit (recommended for apps)
+**Svelte** is a modern JavaScript framework for building user interfaces with remarkable efficiency. Unlike traditional frameworks that ship framework code to the browser, Svelte compiles your components to vanilla JavaScript at build time. This results in:
+- **Smaller bundle sizes** — less code shipped to users
+- **Better performance** — reactive updates without a virtual DOM
+- **Easier to learn** — component syntax is closer to HTML and JavaScript you already know
+- Built-in support for **animations**, **transitions**, and **state management**
+
+Svelte works great with **SvelteKit**, a meta-framework that adds routing, server-side rendering, and deployment options on top. ([Learn more](https://svelte.dev))
+
+## What is PocketBase?
+
+**PocketBase** is a minimal, self-contained backend system that combines a database, authentication system, real-time APIs, and file storage in a single executable. It's designed for developers who want to avoid the complexity of managing separate services:
+- **Single binary** — no Docker, Kubernetes, or complicated setup
+- **Built-in authentication** — user management out of the box
+- **Real-time subscriptions** — WebSocket support for live data
+- **Admin dashboard** — visual UI for managing collections and users
+- **Easy deployment** — runs on most platforms with minimal footprint
+
+Perfect for getting to MVP quickly without DevOps overhead. ([Learn more](https://pocketbase.io))
+
+## Quick Start
+
+### SvelteKit Frontend
 
 ```bash
-npm create svelte@latest my-sveltekit-app
-cd my-sveltekit-app
+npm create svelte@latest my-app
+cd my-app
 npm install
-npm run dev -- --open
+npm run dev
 ```
 
-Alpine.js (micro-interactivity)
-
-Add the CDN and use `x-data`/`x-bind`/`@click` directly in HTML:
-
-```html
-<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-<div x-data="{ open: false }">
-  <button @click="open = !open">Toggle</button>
-  <div x-show="open">Hello from Alpine</div>
-</div>
-```
-
-PocketBase (local dev backend)
-
-Run the official Docker image for quick local testing:
+### PocketBase Backend
 
 ```bash
 docker run --rm -it -p 8090:8090 -v "$PWD/pb_data:/pb_data" -e POCKETBASE_DISABLE_TELEMETRY=1 pocketbase/pocketbase serve
 ```
 
-File layout suggestion
-- `apps/` — SvelteKit apps or small frontends
-- `functions/` — server helpers or adapters
-- `db/` — PocketBase schema or exported data
-- `examples/` — Alpine.js snippets, components, and small demos
+Then visit http://localhost:8090/\_/ to create collections and users.
 
-Guiding principles
-- Keep things minimal: prefer small libraries and clear boundaries.
-- Compose, not heap: pair PocketBase for backend data with SvelteKit or plain HTML + Alpine for UI.
-- Make examples runnable: include a tiny demo and clear commands.
+## Resources
 
-Resources
-- Alpine.js: https://alpinejs.dev
-- PocketBase: https://pocketbase.io
-- Svelte & SvelteKit: https://svelte.dev and https://kit.svelte.dev
-
-Next steps
-- Scaffold a `my-sveltekit-app` starter and an `examples/alpine` demo in this repo. Ask if you want me to create them now.
+- **Svelte:** https://svelte.dev
+- **SvelteKit:** https://kit.svelte.dev
+- **PocketBase:** https://pocketbase.io
