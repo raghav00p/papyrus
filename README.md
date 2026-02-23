@@ -1,4 +1,4 @@
-# Odyssey
+# PocketSvelte Odyssey
 
 A starter project to get you up and running with **Svelte** and **PocketBase** for rapid full-stack development.
 
